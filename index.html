@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+     <head>
+	     <title> Pomodoro</title>
+         <link rel="stylesheet" href="css/styles.css">
+	 </head>
+	 <body>
+	    <article>
+		  <h1>Pomodoro</h1>
+		  <section id="left">
+			   <form>
+			      <fieldset>
+			         <legend>Break time</legend>
+					    <p id="break"></p>
+						<div>
+			              <input type="button" onclick="increasebreak()">
+			              <input type="button" onclick="decreasebreak()">
+				        </div>
+				 </fieldset>
+			 </form>
+		</section>
+		<section id="right">
+		   <form>
+		       <fieldset>
+			       <legend>Work Time</legend>
+				   <p id="worktime"> </p>
+				   <div>
+				     <input type="button" onclick="increasework()">
+				     <input type="button" onclick="decreasework()">
+			       </div>
+			   </fieldset>
+			</form>
+		</section>
+		<section id="bttm">
+			<div id="clock">
+			    <p id="time_left"></p>
+			</div>
+		</section>
+	 </article>
+   </body>
+</html>
+			 
+		   
