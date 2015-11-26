@@ -1,6 +1,7 @@
 breakTime = 5;
 workTime = 25;
-stopTime = "0:00"
+
+document.getElementById("time_left").innerHTML = "25:00"
 function assignvar()
 {
   document.getElementById("breaks").innerHTML = breakTime;
@@ -27,8 +28,16 @@ function decreaseWork() {
 	document.getElementById("work").innerHTML = workTime;
 	
 }
-/*function clock(stopTime){
-	var t = Date.parse(stopTime) - Date.parse(new Date());
-	var seconds = Math.floor((t/1000)% 60);
-	var minutes
-} */
+
+function clock(stopTime){
+	var timerTime = document.getElementById("time_left").innerHTML;
+	var ss = timeTimer.split(":");
+	var d = new Date();
+	d.setHours(0);
+	d.setMinutes(ss[0]);
+	d.setSeconds(ss[1]);
+	var d2 = new Date(d.valueOf() - 1000);
+	tempDate = d2.toTimeString().split(" ");
+	tD = tempDate[0].split(":");
+	document.getElementById(" ").innerHTML = (tD[1]+ ":" +tD[2]);
+} 
