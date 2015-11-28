@@ -1,7 +1,7 @@
 breakTime = 5;
 workTime = 25;
-status = 0; // off setting is zero(0) on setting is one(1)
-tickTock = setInterval(clock, 1000);
+stat = 0; // off setting is zero(0) on setting is one(1)
+
 function assignvar()
 {
   document.getElementById("breaks").innerHTML = breakTime;
@@ -43,19 +43,18 @@ function clock(){
 	tempDate = d2.toTimeString().split(" ");
 	tD = tempDate[0].split(":");
 	document.getElementById("time_left").innerHTML = (tD[1]+ ":" +tD[2]);
-    tickTock;
 } 
 
 
 function startStop(){
-	if (status == 1){ // stops th clock
+	if (stat == 1){ // stops th clock
 		clearInterval(tickTock);
-		status = 0;
+		stat = 0;
 		document.getElementById("time_left").innerHTML = workTime;
 	}
 	else { // starts the clock
-		status = 1;
+		stat = 1;
 		document.getElementById("time_left").innerHTML = workTime;
-		tickTock;
+		tickTock = setInterval(clock,1000);
 	}
 }
