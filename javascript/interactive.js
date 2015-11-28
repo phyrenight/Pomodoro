@@ -1,7 +1,7 @@
 breakTime = 5;
 workTime = 25;
-
-document.getElementById("time_left").innerHTML = "25:00"
+status = 0; // off setting is zero(0) on setting is one(1)
+tickTock = setInterval(clock, 1000);
 function assignvar()
 {
   document.getElementById("breaks").innerHTML = breakTime;
@@ -29,15 +29,33 @@ function decreaseWork() {
 	
 }
 
-function clock(stopTime){
+function clock(){
 	var timerTime = document.getElementById("time_left").innerHTML;
-	var ss = timeTimer.split(":");
+	timerTime = timerTime + ":00"
+	var ss = timerTime.split(":");
 	var d = new Date();
 	d.setHours(0);
 	d.setMinutes(ss[0]);
+	console.log(ss[0])
 	d.setSeconds(ss[1]);
+	console.log(d);
 	var d2 = new Date(d.valueOf() - 1000);
 	tempDate = d2.toTimeString().split(" ");
 	tD = tempDate[0].split(":");
-	document.getElementById(" ").innerHTML = (tD[1]+ ":" +tD[2]);
+	document.getElementById("time_left").innerHTML = (tD[1]+ ":" +tD[2]);
+    tickTock;
 } 
+
+
+function startStop(){
+	if (status == 1){ // stops th clock
+		clearInterval(tickTock);
+		status = 0;
+		document.getElementById("time_left").innerHTML = workTime;
+	}
+	else { // starts the clock
+		status = 1;
+		document.getElementById("time_left").innerHTML = workTime;
+		tickTock;
+	}
+}
