@@ -1,7 +1,7 @@
 breakTime = 5;
 workTime = 25;
 stat = 0; // off setting is zero(0) on setting is one(1)
-
+breakOrWork = 0;
 function assignvar()
 {
   document.getElementById("breaks").innerHTML = breakTime;
@@ -10,44 +10,74 @@ function assignvar()
 }
 
 function increaseBreak() {
-    breakTime = breakTime + 1;
-	document.getElementById("breaks").innerHTML = breakTime;
+	if(breakTime < 60) {
+        breakTime++;
+	    document.getElementById("breaks").innerHTML = breakTime;
+    }
+    else{
+		document.getElementById("breaks").innerHTML = breakTime;
+	}
 }
 
 function decreaseBreak() {
-    breakTime = breakTime - 1;
-	document.getElementById("breaks").innerHTML = breakTime;
+	if(breakTime > 0) {
+        breakTime--;
+	    document.getElementById("breaks").innerHTML = breakTime;
+    }
+	else {
+		document.getElementById("breaks").innerHTML = breakTime;
+	}
 }
 
 function increaseWork() {
-    workTime++;
-	document.getElementById("work").innerHTML = workTime;
+    if( workTime < 60){
+	    workTime++;
+	    document.getElementById("work").innerHTML = workTime;
+    }
+	else{
+		document.getElementById("work").innerHTML = workTime;
+	}
 }
 function decreaseWork() {
-    workTime = workTime - 1;
-	document.getElementById("work").innerHTML = workTime;
-	
+	if(workTime > 0){
+        workTime--;
+	    document.getElementById("work").innerHTML = workTime;
+    }
+	else {
+		document.getElementById("work").innerHTML = workTime;
+	}
 }
 
 function clock(){
+	alarmAndSwitch();
 	var timerTime = document.getElementById("time_left").innerHTML;
 	timerTime = timerTime + ":00"
 	var ss = timerTime.split(":");
 	var d = new Date();
 	d.setHours(0);
 	d.setMinutes(ss[0]);
-	console.log(ss[0])
 	d.setSeconds(ss[1]);
-	console.log(d);
 	var d2 = new Date(d.valueOf() - 1000);
 	tempDate = d2.toTimeString().split(" ");
 	tD = tempDate[0].split(":");
 	document.getElementById("time_left").innerHTML = (tD[1]+ ":" +tD[2]);
 } 
 
-
+function alarmAndSwitch() {
+	timer = document.getElementById("time_left").innerHTML;
+	if(timer < "00:01"){
+		if(breakOrWork < 1){
+			breakOrWork = 1
+           document.getElementById("time_left").innerHTML = breakTime;
+	    }
+		else{
+			breakOrWork = 0;
+			document.getElementById("time_left").innerHTML = workTime;
+		}
+	}
+}
 function startStop(){
-	if (stat == 1){ // stops th clock
+	if (stat == 1){ // stops the clock
 		clearInterval(tickTock);
 		stat = 0;
 		document.getElementById("time_left").innerHTML = workTime;

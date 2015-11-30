@@ -1,5 +1,5 @@
 body {
-	background-color:purple;
+	background-color:purple; /* change to a lighter purple*/
 }
 h1 {
 	text-align:center;
@@ -46,13 +46,14 @@ input {
 }
 #clock {
 	border-top:1px black solid;
+	margin-left:33%;
+	width:35%;
 }
 #time_left {
 	border: 1px solid black;
 	border-radius:50%;
 	text-align: center;
 	font-size:410%;
-	width:25%;
-	margin-left:38%;
+	width:100%;
 	background-color:white;
 }
