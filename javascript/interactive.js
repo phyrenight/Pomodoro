@@ -47,7 +47,6 @@ function decreaseWork() {
 		document.getElementById("work").innerHTML = workTime;
 	}
 }
-
 function clock(){
 	alarmAndSwitch();
 	var timerTime = document.getElementById("time_left").innerHTML;
@@ -64,17 +63,18 @@ function clock(){
 } 
 
 function alarmAndSwitch() {
-	timer = document.getElementById("time_left").innerHTML;
-	if(timer < "00:01"){
-		if(breakOrWork < 1){
-			breakOrWork = 1
-           document.getElementById("time_left").innerHTML = breakTime;
+    timer = document.getElementById("time_left").innerHTML;
+    if(timer < "00:01"){
+           soundAlarm()
+        if(breakOrWork < 1){
+            breakOrWork = 1
+            document.getElementById("time_left").innerHTML = breakTime;
 	    }
-		else{
-			breakOrWork = 0;
-			document.getElementById("time_left").innerHTML = workTime;
-		}
-	}
+        else{
+            breakOrWork = 0;
+            document.getElementById("time_left").innerHTML = workTime;
+        }
+    }
 }
 function startStop(){
 	if (stat == 1){ // stops the clock
@@ -87,4 +87,9 @@ function startStop(){
 		document.getElementById("time_left").innerHTML = workTime;
 		tickTock = setInterval(clock,1000);
 	}
+}
+
+function soundAlarm(){
+    var bell = document.getElementById("sound");
+	bell.play();
 }
