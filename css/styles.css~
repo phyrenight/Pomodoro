@@ -1,0 +1,59 @@
+body {
+	background-color:purple; /* change to a lighter purple*/
+}
+h1 {
+	text-align:center;
+    font-size:410%;
+	border-bottom:1px solid black;
+}
+#left {
+    display:inline-block;
+	margin-left:42%;
+}
+#right {
+   display: inline-block;
+}
+form {
+	padding:5%;
+	width:100%;
+}
+fieldset {
+	padding: 5%;
+	margin-top:0%;
+	margin-bottom:20%;
+}
+fieldset div div{
+	display:inline-block;
+	margin-top:5%;
+	margin-bottom:0%;
+    vertical-align:middle;
+}
+fieldset  p{
+	background-color:white;
+	display:inline-block;
+	border: 1px solid black;
+	padding:15%;
+	color:black;
+	vertical-align:middle;
+}
+input { 
+    display:block;
+	border:1px black solid;
+    width:100%;
+	}
+#bttm {
+	border-top:1px solid black;
+}
+#clock {
+	border-top:1px black solid;
+	margin-left:33%;
+	width:35%;
+}
+#time_left {
+	border: 1px solid black;
+	border-radius:50%;
+	text-align: center;
+	font-size:410%;
+	width:100%;
+	background-color:white;
+}

@@ -1,51 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-     <head>
-	     <meta charset="utf-8">
-	     <title> Pomodoro</title>
-         <link rel="stylesheet" href="css/styles.css">
-	 </head>
-	 <body onload="assignvar()">
-	    <article>
-		  <h1>Pomodoro</h1>
-		  <section id="left">
-			   <form>
-			      <fieldset>
-			         <legend>Break time</legend>
-						<div>
-						<p id="breaks"></p><!--
-						--><div>
-			              <input type="button" value="+" onclick="increaseBreak();">
-			              <input type="button"  value="-" onclick="decreaseBreak();">
-				        </div>
-						</div>
-				 </fieldset>
-			 </form>
-		</section>
-		<section id="right">
-		   <form>
-		       <fieldset>
-			       <legend>Work Time</legend>
-				   <div>
-				   <p id="work"> </p><!--
-				   --><div> 
-				     <input type="button" value="+" onclick="increaseWork();">
-				     <input type="button" value="-" onclick="decreaseWork()">
-			       </div>
-				   </div>
-			   </fieldset>
-			</form>
-		</section>
-		<section id="bttm">
-			<div id="clock">
-			    <p id="time_left" onclick="startStop()"></p>
-				<audio src="sounds/bell.wav" id="sound"/><!-- http://soundbible.com/1496-Japanese-Temple-Bell-Small.html -->
-			</div>
-		</section>
-	 </article>
-	 <script src="javascript/interactive.js">
-	 </script>
-   </body>
+  <head>
+    <meta charset="utf-8">
+    <title> Pomodoro</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body onload="assignvar()">
+    <article>
+      <header>
+        <h1>Pomodoro</h1>
+      </header>
+      <section id="left">
+        <form>
+          <fieldset>
+            <legend>Break time</legend>
+            <div>
+              <p id="breaks">5</p><!--
+              --><div>
+                  <input type="button" value="+" onclick="increaseBreak();">
+                  <input type="button"  value="-" onclick="decreaseBreak();">
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+      <section id="right">
+        <form>
+          <fieldset>
+            <legend>Work Time</legend>
+              <div>
+                <p id="work">25</p><!--
+                --><div> 
+                  <input type="button" value="+" onclick="increaseWork();">
+                  <input type="button" value="-" onclick="decreaseWork()">
+               </div>
+              </div>
+          </fieldset>
+        </form>
+      </section>
+      <section id="bttm">
+        <div id="clock">
+          <p id="time_left" onclick="startStop()">25</p>
+          <audio src="sounds/bell.wav" id="sound"/><!-- http://soundbible.com/1496-Japanese-Temple-Bell-Small.html -->
+        </div>
+      </section>
+    </article>
+      <script src="javascript/interactive.js"></script>
+  </body>
 </html>
 			 
 		   
