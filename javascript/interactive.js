@@ -1,12 +1,5 @@
-//var workTime = 25;
 var stat = 0; // off setting is zero(0) on setting is one(1)
 var breakOrWork = 0;
-
-function assignvar()
-{
-//  document.getElementById("work").innerHTML = workTime;
-//  document.getElementById("time_left").innerHTML = workTime;
-}
 
 function increaseBreak() {
   var breakTime = parseInt(document.getElementById("breaks").innerHTML);
@@ -53,6 +46,9 @@ function decreaseWork() {
 }
 
 function clock(){
+  /*
+    function: used for timer countdown
+  */
   alarmAndSwitch();
   var timerTime = document.getElementById("time_left").innerHTML;
   timerTime = timerTime + ":00";
@@ -68,30 +64,39 @@ function clock(){
 } 
 
 function alarmAndSwitch() {
+  /*
+    function: switches timer between the work and the break time  
+  */
   var timer = document.getElementById("time_left").innerHTML;
   if(timer < "00:01"){
     soundAlarm();
     if(breakOrWork < 1){
       breakOrWork = 1;
+      breakTime = document.getElementById("breaks").innerHTML;
       document.getElementById("time_left").innerHTML = breakTime;
     }
     else{
       breakOrWork = 0;
+      workTime = document.getElementById("work").innerHTML;
       document.getElementById("time_left").innerHTML = workTime;
     }
   }
 }
 
 function startStop(){
+  /*
+    function: starts and stops counter , then resets it to the current work setting.(reword)
+  */
+  var workTime = document.getElementById("work").innerHTML;
   if (stat == 1){ // stops the clock
-	clearInterval(tickTock);
-	stat = 0;
-	document.getElementById("time_left").innerHTML = workTime;
+	  clearInterval(tickTock);
+    stat = 0;
+	  document.getElementById("time_left").innerHTML = workTime;
   }
   else { // starts the clock
-	stat = 1;
-	document.getElementById("time_left").innerHTML = workTime;
-	tickTock = setInterval(clock,1000);
+	  stat = 1;
+	  document.getElementById("time_left").innerHTML = workTime;
+	  tickTock = setInterval(clock,1000);
   }
 }
 
