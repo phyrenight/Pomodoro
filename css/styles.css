@@ -1,15 +1,14 @@
 body {
+  text-align: center;
 }
 
 h1 {
-  text-align:center;
-  font-size:410%;
-  border-bottom:1px solid black;
+  font-size: 410%;
+  border-bottom: 1px solid black;
 }
 
 #left {
-  display:inline-block;
-  margin-left:42%;
+  display: inline-block;
 }
 
 #right {
@@ -17,53 +16,53 @@ h1 {
 }
 
 form {
-  padding:5%;
-  width:100%;
+  padding: 5%;
+  width: 100%;
 }
 
 fieldset {
   padding: 5%;
-  margin-top:0%;
-  margin-bottom:20%;
+  margin-top: 0%;
+  margin-bottom: 20%;
 }
 
 fieldset div div{
-  display:inline-block;
-  margin-top:5%;
-  margin-bottom:0%;
-  vertical-align:middle;
+  display: inline-block;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  vertical-align: middle;
 }
 
 fieldset  p{
-  background-color:white;
-  display:inline-block;
+  background-color: white;
+  display: inline-block;
   border: 1px solid black;
-  padding:15%;
-  color:black;
-  vertical-align:middle;
+  padding: 15%;
+  color: black;
+  vertical-align: middle;
 }
 
 input { 
-  display:block;
-  border:1px black solid;
-  width:100%;
+  display: block;
+  border: 1px black solid;
+  width: 100%;
 }
 
 #bttm {
 }
 
 #clock {
-  margin-left:33%;
-  width:35%;
+  margin: auto;
+  width: 35%;
 }
 
 #time_left {
   border: 1px solid black;
-  border-radius:50%;
+  border-radius: 50%;
   text-align: center;
-  font-size:410%;
-  width:100%;
-  background-color:white;
+  font-size: 410%;
+  width: 100%;
+  background-color: white;
   box-shadow: 10px 5px 5px black;
   -moz-box-shadow: 10px 5px 5px black;
   -webkit-box-shadow: 10px 5px 5px black;

@@ -83,10 +83,12 @@ function alarmAndSwitch() {
   }
 }
 
+
 function startStop(){
   /*
     function: starts and stops counter , then resets it to the current work setting.(reword)
   */
+  //ssvar tickTock  = 0;
   var workTime = document.getElementById("work").innerHTML;
   if (stat == 1){ // stops the clock
 	  clearInterval(tickTock);
