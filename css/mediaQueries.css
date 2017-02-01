@@ -1,0 +1,14 @@
+@media (min-width: 320px) {
+  h1 {
+    font-size: 410%; } }
+@media (min-width: 400px) {
+  #clock {
+    width: 35%; } }
+@media (min-width: 500px) {
+  #clock {
+    width: 35%; }
+
+  #time_left {
+    font-size: 410%; } }
+
+/*# sourceMappingURL=mediaQueries.css.map */
