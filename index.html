@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title> Pomodoro</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/mediaQueries.css">
+    <title>Pomodoro</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Marc Preston" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/mediaQueries.css" />
   </head>
   <body>
     <article>
@@ -18,8 +19,8 @@
             <div>
               <p id="breaks">5</p><!--
               --><div>
-                  <input type="button" value="+" onclick="increaseBreak();">
-                  <input type="button"  value="-" onclick="decreaseBreak();">
+                  <input type="button" id="incBreakTime" value="+" />
+                  <input type="button" id="decBreakTime" value="-" />
               </div>
             </div>
           </fieldset>
@@ -32,8 +33,8 @@
               <div>
                 <p id="work">25</p><!--
                 --><div> 
-                  <input type="button" value="+" onclick="increaseWork();">
-                  <input type="button" value="-" onclick="decreaseWork()">
+                  <input type="button" id="incWorkTime" value="+" />
+                  <input type="button" id="decWorkTime" value="-" />
                </div>
               </div>
           </fieldset>
@@ -46,7 +47,7 @@
         </div>
       </section>
     </article>
-      <script src="javascript/interactive.js"></script>
+    <script src="javascript/interactive.js"></script>
   </body>
 </html>
 			 

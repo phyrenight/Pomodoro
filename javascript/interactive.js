@@ -1,61 +1,53 @@
 (function(){
   "use strict";
 
-  class gameState {
-    constructor(){
-      this.tickTock = "";
-    }
+  var gameState =  {
+      tickTock : "",
+      breakTime : 5,
+      workTime : 25
   }
 
   var clockbutton = document.getElementById("time_left");
-
+  var addBreakTime = document.getElementById("incBreakTime");
+  var subBreakTime = document.getElementById("decBreakTime");
+  var addWorkTime = document.getElementById("incWorkTime");
+  var subWorkTime = document.getElementById("decWorkTime");
+  
   clockbutton.addEventListener("click", startStop, false);
+  addBreakTime.addEventListener("click", increaseBreak, false);
+  subBreakTime.addEventListener("click", decreaseBreak, false);
+  addWorkTime.addEventListener("click", increaseWork, false);
+  subWorkTime.addEventListener("click", decreaseWork, false);
 
   var stat = 0; // off setting is zero(0) on setting is one(1)
   var breakOrWork = 0;
 
   function increaseBreak() {
-    var breakTime = parseInt(document.getElementById("breaks").innerHTML);
-    if(breakTime < 60) {
-      breakTime++;
-      document.getElementById("breaks").innerHTML = breakTime;
+    if(gameState.breakTime < 60) {
+      gameState.breakTime++;
     }
-    else{
-	    document.getElementById("breaks").innerHTML = breakTime;
-    }
+	  document.getElementById("breaks").innerHTML = gameState.breakTime;
   }
 
   function decreaseBreak() {
-    var breakTime = parseInt(document.getElementById("breaks").innerHTML);
-    if(breakTime > 0) {
-      breakTime--;
-      document.getElementById("breaks").innerHTML = breakTime;
+    if(gameState.breakTime > 0) {
+      gameState.breakTime--;
     }
-    else {
-	    document.getElementById("breaks").innerHTML = breakTime;
-    }
+	  document.getElementById("breaks").innerHTML = gameState.breakTime;
   }
 
   function increaseWork() {
-    var workTime = parseInt(document.getElementById("work").innerHTML);
-    if( workTime < 60){
-      workTime++;
-      document.getElementById("work").innerHTML = workTime;
+    if( gameState.workTime < 60){
+      gameState.workTime++;
     }
-    else{
-	    document.getElementById("work").innerHTML = workTime;
-    }
+    document.getElementById("work").innerHTML = gameState.workTime;
   }
 
   function decreaseWork() {
-    var workTime = parseInt(document.getElementById("work").innerHTML);
-    if(workTime > 0){
-      workTime--;
-      document.getElementById("work").innerHTML = workTime;
+    if(gameState.workTime > 0){
+      gameState.workTime--;
     }
-    else {
-      document.getElementById("work").innerHTML = workTime;
-    }
+    document.getElementById("work").innerHTML = gameState.workTime;
   }
 
   function clock(){
@@ -85,13 +77,11 @@
       soundAlarm();
       if(breakOrWork < 1){
         breakOrWork = 1;
-        breakTime = document.getElementById("breaks").innerHTML;
-        document.getElementById("time_left").innerHTML = breakTime;
+        document.getElementById("time_left").innerHTML = gameState.breakTime;
       }
       else{
         breakOrWork = 0;
-        workTime = document.getElementById("work").innerHTML;
-        document.getElementById("time_left").innerHTML = workTime;
+        document.getElementById("time_left").innerHTML = gameState.workTime;
       }
     }
   }
@@ -101,15 +91,14 @@
     /*
       function: starts and stops counter , then resets it to the current work setting.(reword)
     */
-    var workTime = document.getElementById("work").innerHTML;
     if (stat == 1){ // stops the clock
 	    clearInterval(gameState.tickTock);
       stat = 0;
-	    document.getElementById("time_left").innerHTML = workTime;
+	    document.getElementById("time_left").innerHTML = gameState.workTime;
     }
     else { // starts the clock
 	    stat = 1;
-	    document.getElementById("time_left").innerHTML = workTime;
+	    document.getElementById("time_left").innerHTML = gameState.workTime;
 	    gameState.tickTock = setInterval(clock,1000);
     }
   }
