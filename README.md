@@ -2,7 +2,7 @@
 
 A pomodoro timer.A timer that can help you be more productive.
 
-##To download either
+## To download either
 
 Clone the repository
 
@@ -10,7 +10,7 @@ Clone the repository
 Or download the code
 
 
-##To run
+## To run
 
 Navigate to the file containing the pomodoro index.html.
 
